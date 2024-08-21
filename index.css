@@ -1,0 +1,43 @@
+body{
+    background-color: black;
+}
+body *{
+    font-family: 'Courier New', Courier, monospace;
+    color: chartreuse;
+    
+}
+#title{
+    text-align: center;
+}
+#CLIAtivo{
+    background-color: black;
+    border: none;
+    outline: none;
+    flex: 1;
+}
+.CLIVelho{
+    background-color: black;
+    border: none;
+    outline: none;
+    flex: 1;
+    width: 100%;
+}
+.typing-container{
+    display: flex;
+}
+#typing-container{
+    display: flex;
+}
+.typing-container *{
+    font-size: 15px;
+}
+#typing-container *{
+    font-size: 15px;
+}
+.invisible{
+    width: 0px;
+    height: 0px;
+    border: none;
+    color: black;
+    background-color: black;
+}
