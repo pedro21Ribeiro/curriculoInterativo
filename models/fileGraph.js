@@ -1,3 +1,4 @@
+export var currentNode;
 
 class NodeDir {
     name;
@@ -20,7 +21,7 @@ class NodeDir {
     }
 
     printPath(){
-        if (parent != null) {
+        if (this.parent != null) {
             return this.parent.printPath() + "/" + this.name;
         }else{
             return this.name;
@@ -41,9 +42,25 @@ class NodeDir {
     }
 }
 
-const root = new NodeDir("", null);
-
-var currentNode = root;
+export function init(){
+    const root = new NodeDir("", null);
+    currentNode = root;
+    fetch('../files.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json(); // Parse the JSON from the response
+        })
+        .then(data => {
+            translateObjToNodes(data);
+        }).then( () => {
+            currentNode = root.childs.get("home");
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
+}
 
 
 function translateObjToNodes(object) {
@@ -60,5 +77,4 @@ function translateObjToNodes(object) {
         currentNode = currentNode.parent;
     }
 }
-
 

@@ -1,8 +1,11 @@
 var input;
 var dir = '/home/';
 
-import "./models/commands"
-import { command } from "./models/commands";
+import { pwd } from "./commands/pwd.js";
+import {command} from "./models/commands.js";
+import { init } from "./models/fileGraph.js";
+
+init();
 
 document.getElementById('CLIAtivo').addEventListener('keypress', function(event) {
     // conferindo se foi o enter
@@ -37,10 +40,9 @@ function submitFunction() {
     //constante que sempre será adicionado ao fim
     
     //chamando a função de resposta
-    element = resposta(texto);
     element = command(texto)
 
-    let user = '<div id="typing-container"><span>guest@peterpedro01:~' + dir + '$ </span><input type="text" id="CLIAtivo"> </div>';
+    let user = '<div id="typing-container"><span>guest@peterpedro01:' + pwd.UfExec() + '$ </span><input type="text" id="CLIAtivo"> </div>';
 
     //adicionando a constante a resposta
     element += user;
