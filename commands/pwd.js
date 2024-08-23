@@ -17,7 +17,7 @@ export class pwd {
     }
 
     static help() {
-        return 'Imprime o caminho do diretorio atual'
+        return 'o pwd se restringe a somente digitar pwd, o comando pwd não aceita argumentos adicionais'
     }
 
     static desc() {

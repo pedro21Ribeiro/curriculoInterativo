@@ -1,5 +1,7 @@
 import "../commands/pwd.js";
 import { pwd } from "../commands/pwd.js";
+import { cat } from "../commands/cat.js";
+import { ls } from "../commands/ls.js";
 
 const FnMap = new Map();
 
@@ -34,11 +36,19 @@ class help {
             return returnElement;
         }
 
-        return '<p>Comando Help Composto ainda não implementado</p>'
+        const commando = args[0];
+        
+        if(!FnMap.has(commando)){
+            return '<p>Comando não encontrado</p>'
+        }
+
+        const fnClass = FnMap.get(commando);
+
+        return `<p>${fnClass.help()}</p>`
     }
 
     static help() {
-        return 'Usado para mostrar os commandos disponíveis';
+        return 'Use help para mostrar a lista de comando e help {comando} para saber mais sobre um comando especifico';
     }
 
     static desc() {
@@ -51,3 +61,5 @@ class help {
 //-------Lista de Commandos--------
 FnMap.set("pwd", pwd);
 FnMap.set("help", help);
+FnMap.set("cat", cat);
+FnMap.set("ls", ls);

@@ -1,8 +1,9 @@
 {
     "home": {
-        
+       "javascript.txt": "<p>Usei, e uso javascript em varios projetos, esse site mesmo quase todo é construido em js. Um outro projeto onde usei bastante js foi no projeto mundo verde, onde usei js para fazer o backend em Node" 
+       ,".hiddenFile.txt": "<p>Parabéns esse é um arquivo escondido, sua curiosidade foi recompensada, existem mais desses no site, encontre todos para revelar uma mensagem Secreta."
     },
     "easterEggs" : {
-
+        
     }
 }
