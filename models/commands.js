@@ -2,6 +2,7 @@ import "../commands/pwd.js";
 import { pwd } from "../commands/pwd.js";
 import { cat } from "../commands/cat.js";
 import { ls } from "../commands/ls.js";
+import { cd } from "../commands/cd.js";
 
 const FnMap = new Map();
 
@@ -63,3 +64,4 @@ FnMap.set("pwd", pwd);
 FnMap.set("help", help);
 FnMap.set("cat", cat);
 FnMap.set("ls", ls);
+FnMap.set("cd", cd);

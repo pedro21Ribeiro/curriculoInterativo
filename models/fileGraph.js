@@ -78,3 +78,6 @@ function translateObjToNodes(object) {
     }
 }
 
+export function setCurrentNode(node){
+    currentNode = node;
+}
